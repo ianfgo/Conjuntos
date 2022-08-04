@@ -457,8 +457,8 @@ namespace estatistica
 			//Q3 = (roll[primeiroNumeroQ3 - 1] + roll[segundoNumeroQ3 - 1]) / 2d;
 			*/
 
-			List<double> Q1Conjunto = new List<double>(conjunto);
-			List<double> Q3Conjunto = new List<double>(conjunto);
+			List<double> Q1Conjunto = new List<double>(roll);
+			List<double> Q3Conjunto = new List<double>(roll);
 
 			double halfArray = conjunto.Count / 2d;
 
@@ -466,7 +466,7 @@ namespace estatistica
 			int toRemoveQ3 = (int)Math.Ceiling(halfArray);
 
 			Q1Conjunto.RemoveRange(toRemoveQ1, conjunto.Count - toRemoveQ1);
-			Q3Conjunto.RemoveRange(0, conjunto.Count - toRemoveQ3);
+			Q3Conjunto.RemoveRange(0, toRemoveQ3);
 
 			if (detalhes == true)
 			{
